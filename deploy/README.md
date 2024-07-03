@@ -6,7 +6,6 @@ This repository is used to illustrate how the different versions of the VotingAp
 
 First of all let's talk a little bit about this simple thus very interesting demo application.
 
-
 # What is the VotingApp
 
 The VotingApp is a *demo* application following a micro-services architecture. 
@@ -62,7 +61,6 @@ The VotingApp v3 is thus composed of 5 microservices as illustrated in the follo
 - result: backend sending scores to a UI through websocket
 - result-ui: front end in Angular displaying the results of the votes
 
-
 # Get it locally
 
 Use the following commands to clone all the projects in a local folder
@@ -73,7 +71,6 @@ for project in config vote vote-ui result result-ui worker; do
   git clone https://gitlab.com/voting-application/$project
 done
 ```
-
 # The projects repositories
 
 In the official GitHub repository, all the projects are under the same umbrella. To clarify the things and make it easier to map it against a real micro-service application, we've splitted the application so that each micro-service has it's own Git repository.
@@ -97,7 +94,6 @@ From *config/compose*, run the following command:
 ```
 $ docker-compose up
 ```
-
 This deploys the application using the branches currently checked out for each microservice.
 
 The *LANGUAGE* environment variable can to be set to *java*, *dotnet* or *go* to deploy the corresponding flavor of the worker microservice. The following command deploy the VotingApp with the *java* version of the worker.
@@ -105,7 +101,6 @@ The *LANGUAGE* environment variable can to be set to *java*, *dotnet* or *go* to
 ```
 LANGUAGE=java docker-compose up
 ```
-
 ## Installation with standard manifests
 
 The *manifests* folder contains subfolders, each of them containing the yaml specifications of the application:
@@ -115,7 +110,6 @@ To install the version *VERSION* of the VotingApp, run the following command (ch
 ```
 kubectl apply -f manifests/VERSION
 ```
-
 ## Installation with [Helm](https://helm.sh)
 
 The application can be installed using [Helm](https://helm.sh) with the following command within the *helm* folder:
@@ -133,7 +127,6 @@ The different flavors of the application can be installed using [Kustomize](http
 ```
 kubectl apply -k overlays/VERSION
 ```
-
 # Blog articles
 
 Several articles using the VotingApp to illustrate technological pieces:
